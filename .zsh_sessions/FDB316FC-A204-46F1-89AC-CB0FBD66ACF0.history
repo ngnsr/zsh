@@ -1,0 +1,1016 @@
+nmap localhost
+docker run -d --name bullmq-redis -p 6379:6379 redis
+nmap localhost
+nmap localhost
+npm run start
+npm run start
+clear
+npm run start
+npm run queue
+npm run queue
+npm run queue
+echo "1+1" | bc
+npm run worker
+npm run worker
+сду�у�к
+clear
+npm run start:dev admin-management
+clear
+clear
+cd Documents
+cat p | pbcopy
+exit
+npm run typeorm:migration:create ./apps/admin-management/src/common/migrations/update-day-demog-report
+clear
+npm run start:dev admin-managemen
+npm run start:dev admin-management
+git stash
+git checkout dev
+git pull
+git checkout -b 'fix/MGR-577'
+git stash apply
+clear
+npm run typeorm:migration:create ./apps/admin-management/src/common/migrations/consolidated-report-compare-by-client
+git stash
+git checkout dev
+git pull
+git checkout -b 'fix/MGR-579'
+git stash apply
+  clear
+npm run start:dev admin-management
+cd Documents
+cat p | pbcopy
+exi
+exit
+make
+make
+make
+make
+cd ..
+ls
+cd
+cd Documents
+ls
+exit
+ls
+mkdir lab1
+mv fst.hs lab1
+cd lab1
+mv fst.hs lab1.hs
+git clone https://github.com/vladyslavpavlenko/fcsc-report-template.git
+ls
+cd fcsc-report-template
+ls
+open .
+cd ..
+ls
+nvim *.tex
+cp ~/proj/word2latex/Makefile .
+make
+make all
+nvim main.tex
+fg
+make
+fg
+nvim main.tex
+make 
+fg
+make
+fg
+make 
+pdflatex
+nvim
+fg
+make
+open main.pdf
+fg
+make
+open main.pdf
+fg
+make
+open .
+zathura
+open main.pdf
+make
+ls
+rm main.pdf
+make
+open main.pdf
+fg
+make
+make
+rm main.pdf
+make
+open main.pdf
+fg
+rm main.pdf
+make
+open main.pdf
+fg
+make
+ls
+open .
+nvim lab1.hs
+cp lab1.hs ..
+cd ..
+ls
+mkdir lab1
+mv lab1 lab2
+cd lab2
+fg
+nvim main.tex
+ls
+ls
+cd ..
+ls
+nvim main.hs
+nvim lab1.hs
+ls
+mkdir lab1
+mv lab1.hs lab1
+cp lab2/main.tex lab1/
+cp lab2/Makefile lab1
+cd lab1
+nvim main.tex
+open .
+make
+open main.log
+open main.pdf
+nvim main.tex
+rm main.pdf
+make
+make
+open main.pdf
+fg
+make
+open main.pdf
+fg
+make
+cd ..
+cd lab2
+nvim main.log main.tex
+nvim main.tex
+cd ..
+cd lab1
+ls
+nvim main.tex
+make
+open .
+exit
+open .
+find -name '*.tex'
+fzf
+cd 
+fzf
+cd proj
+git clone https://github.com/ngnsr/nm.git
+cd nm
+ls
+cd lab1
+ls
+nvim nm_lab1.tex
+nvim
+cd .
+cd
+cd proj/fp/haskell/lab3
+nvim
+cd ..
+cd lab1
+ls
+nvim
+ls
+cd ..
+ls
+nvim main.hs
+fg
+fg
+nvim
+cd lab2
+ls
+ls
+nvim lab1.2.hs
+mv lab1.2.hs lab2.hs
+ls
+nvim lab2.hs
+cd ..
+cd lab3
+nvim lab3.hs
+cd ..
+cd lab1
+ls
+nvim lab1.hs
+cd ..
+cd lab2
+nvim lab2.hs
+cd ..
+cd lab3
+ls
+nvim lab3.hs
+exit
+ghci
+exit
+cd proj/fp
+ls
+cd haskell
+l
+nvim fst.hs
+ду�
+ls
+mkdir lab3
+cd lab3
+nvim lab4.hs
+ls
+cp ../lab2/Makefile .
+cp ../lab2/main.tex .
+ls
+fg
+exit
+exit
+clear
+git checkout dev
+git pull
+git pull
+clear
+git checkout 'feature/care-coordination-foundation/mgr-576'
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/test
+clear
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/care-coordination-create-entities
+clear
+npm run start:dev admin-management
+clear
+npm run start:dev admin-management
+npm run start:dev admin-management
+clear
+npm run start:dev admin-management
+clear
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+clear
+npm run start:dev admin-management
+exit
+exit
+nest -g mo apps/admin-management/src/hospitals/care-coordination
+nest g mo apps/admin-management/src/hospitals/care-coordination
+nest g mo ./hospitals/care-coordination
+nest g mo ./hospitals/hospital-settings
+nest g co ./hospitals/hospital-settings
+nest g s ./hospitals/hospital-settings
+nest g so ./hospitals/hospital-settings
+nest g s ./hospitals/hospital-settings
+npm i
+clear
+nest g s ./hospitals/hospital-settings
+clear
+exit
+npm run start:dev admin-management
+npm run start:dev admin-management
+exit
+git pull
+git stash
+git pull
+git stash apply
+clear
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/care-coordinaion-notification-entity
+clear
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/care-coordinaion-notification-entity
+nmap localhost
+/usr/local/var/log/postgresql@15
+nvim /usr/local/var/log/postgresql@15
+cd /usr/local/var/postgresql@15
+ls
+rm *.pid
+clear
+brew services restart porstgresql@15
+brew services restart postgresql@15
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/care-coordinaion-notification-entity
+cd
+cd proj/carelink-backend-platform
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/care-coordinaion-notification-entity
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/care-coordinaion-notification-entity
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/care-coordinaion-notification-entity
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/care-coordinaion-notification-entity
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/care-coordinaion-notification-entity
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/care-coordinaion-notification-entity
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/care-coordinaion-notification-entity
+clear
+npm run start:dev admin-management
+git pull
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/care-coordinaion-notification-entity
+exit
+psql
+psql -U postgres -d mgear_db
+man psql
+psql -U postgres -d mgear_db -f ~/Downloads/dev_new_333.sql
+у�у�у�е
+exit
+psql -U postgres
+psql
+psql
+psql
+clear
+ls
+psql
+brew info postgresql
+brew info postgresql@15
+echo 'export PATH="/usr/local/opt/postgresql@15/bin:$PATH"' >> /Users/rr/.config/zsh/.zshrc
+exit
+npm run start:dev admin-management
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/care-coordinaion-entities
+clear
+ls
+npm run start:dev admin-management
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/care-coordination-entities
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+git push
+git pull
+git push
+git log
+git pull
+git merge 
+git push
+git push
+clear
+npm run start:dev admin-management
+ls
+git stash
+git checkout dev
+git pull
+git pull origin dev
+git checkout 'feature/care-coordination-foundation/mgr-576'
+git log dev --oneline
+git merge dev
+git merge dev
+git status
+git restore --  apps/admin-management/src/common/entities/index.ts
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/create-care-coordination-entities
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/create-care-coordination-entities
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/create-care-coordination-entities
+npm run start:dev admin-management
+npm run start:dev admin-management
+git stash apply
+clear
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+cd proj/fp
+ls
+cd haskell
+ls
+cd lab1
+ls
+nvim lab1.hs
+echo "1 3 5 3 7 3 9\
+\
+0\
+1\
+-1\
+7\
+" > 1.1.txt
+fg
+make
+open main.pdf
+clear
+fg
+make
+cd ..
+cd lab2
+ls
+fg
+nvim *.hs
+cd ..
+cd lab1
+nvim *.hs
+cd ../lab2
+nvim *.hs
+ls
+rm lab1.hs
+nvim lab2.hs
+cd ..
+nvim
+nvim lab2/1.2.txt
+fg
+ls
+cd lab2
+ls
+fg
+make
+fg
+cd ..
+nvim
+nvim lab2/2.txt
+fg
+tree
+mv lab2/2.txt /lab3/
+mv lab2/2.txt /lab3
+ls
+cd lab2
+ls
+mv 2.txt ..
+cd ..
+ls
+mv 2.txt lab3
+fg
+fg
+fg
+nvim
+fg
+ls
+cd lab3
+ls
+fg
+make
+fg
+make
+rm main.pdf
+ls
+rm main.aux main.log main.out
+y
+y
+make
+fg
+make
+fg
+make
+fg
+make
+fg
+make
+fg
+make
+fg
+make
+clear
+make | tee
+make | nvim
+fg
+make
+fg
+make
+fg
+fg
+make
+fg
+make
+fg
+make
+fg
+make
+fg
+make
+ghci
+ls
+cd ..
+ghci
+cd lab2
+ghci
+cd ../lab3
+ghci
+ls
+ghci
+clear
+ghci
+cd proj/fp
+ls
+cd prolog
+ls
+mkdir lab1
+nvim db.pl
+ду�
+ls
+cd lab1
+ls
+nvim lab1.pl
+echo "[a, b, c, d, c, e, c].\
+[1, 2, 3, 4, 5, 6, 7].\
+[apple, banana, apple, grape, apple]." > 1.1.txt
+cat 1.1.txt
+gprolog --consult-file=lab1.pl -- input.txt 3 4\
+
+gprolog --consult-file=lab1.pl -- input.txt 3 4
+gprolog
+gprolog
+exit
+cd proj/fp
+ls
+cd prolog
+l
+cd lab1
+ls
+nvim lab1.pl
+exit
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/fix-care-coordination-contact-entity
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/fix-care-coordination-contact-entity
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/fix-care-coordination-contact-entity
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/fix-care-coordination-contact-entity
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/fix-care-coordination-contact-entity
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/fix-care-coordination-contact-entity
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/fix-care-coordination-contact-entity
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/fix-care-coordination-contact-entity
+git branch
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/test
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+св
+cd
+tee file_sizes.txt
+exit
+find / -type f -printf "%s\n" 2>/dev/null | sort -n > file_sizes.txt
+nvim file_sizes.txt
+find / -type f -exec stat -f "%z" {} + 2>/dev/null | sort -n > file_sizes.txt\
+
+nvim file_sizes.txt
+cd proj
+mkdir os
+ls
+cd os 
+mv ~/file_sizes.txt .
+nvim main.py
+python3 main.py
+python3 -m venv .venv
+./.venv/bin/pip install numpy
+python3 main.py
+source .venv/bin/activate
+python3 main.py
+./.venv/bin/pip install matplotli
+./.venv/bin/pip install matplotliv
+./.venv/bin/pip install matplotlivb
+./.venv/bin/pip install matplotlib
+python3 main.py
+fg
+ls
+nvim main.py in
+python3 main.py
+nvim file_sizes.txt
+fg
+exit
+cd Downloads
+cat p | pbcopy
+cd
+cd Documents
+cat p | pbcopy
+brew install --cask libreoffice
+exit
+npm run start:dev admin-management
+git pull
+git merge
+clear
+git checkout dev
+git pull
+git status
+npm run start:dev admin-management
+git stash
+git checkout -b 'fix/MGR-586'
+git stash apply
+npm run start:dev admin-management
+npm run typeorm:migration:create ./apps/admin-management/src/common/migrations/update-ed-fax-delays-report
+git stash
+git checkout -b dev
+git checkout dev
+git pull
+clear
+git checkout -b 'fix/MGR-585'
+git stash apply
+npm run start:dev admin-management
+git checkout de
+git checkout dev
+git checkout 'feature/care-coordination-foundation/mgr-576'
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+cd ..
+cd carelink-admin-ui
+git pull
+clear
+yarn run
+yarn dev
+npm run start:dev admin-management
+cd apps/admin-management/src/care-coordination/event-logs
+ls
+tree
+git stash
+git checkout dev
+git pull
+git stash
+git checkout -b 'fix/MGR-586'
+git checkout 'fix/MGR-586' 
+git stash apply
+git checkout dev
+git stash apply
+git stash apply
+git stash list
+git stash apply
+git stash apply
+git stash apply
+git stash pop
+git stash apply
+git merge --abort
+git restore event-logs-queue/event-logs-queue.processor.ts\
+git restore event-logs-queue/event-logs-queue.service.ts\
+git restore event-logs.service.ts\
+git restore ../../common/entities/care-coordination-event-log.entity.ts
+git checkout 'feature/care-coordination-foundation/mgr-576'
+git stash
+git checkout 'feature/care-coordination-foundation/mgr-576'
+git branch
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+git checkout 'feature/care-coordination-foundation/mgr-576'
+git stash apply
+git restore apps/admin-management/src/care-coordination/event-logs/event-logs-queue/event-logs-queue.processor.ts
+ls
+cd proj
+ls
+cd os
+ls
+nvim file_sizes.txt
+nvim cmd.sh
+nvim cmd.sh
+nvim cmd.sh
+chmod +x cmd.sh
+ll
+ls
+source .venv/bin/activate
+python3 main.py
+nvim main.py
+python main.py
+fg
+python main.py
+fg
+python main.py
+fg
+python main.py
+fg
+python main.py
+fg
+python main.py
+fg
+python main.py
+fg
+python main.py
+fg
+python main.py
+fg
+python main.py
+fg
+nvim cmd.sh
+python main.py
+celar
+clear
+cd
+cd proj/os
+nvim file_sizes.txt
+clear
+git stash
+git checkout dev
+git pull
+npm run start:dev admin-management
+git checkout -b 'fix/MGR-617'
+npm run start:dev admin-management
+git status
+git add -u
+git status
+git commit --ammend 
+git commit --amend
+git push
+git push --force-with-lease
+git push origin --delete 'fix/MGR-617'
+git status
+git checkout dev
+git pull
+git checkout 'fix/MGR-617'
+git checkout dev
+git branch -D 'fix/MGR-617'
+git checkout -b 'fix/MGR-617'
+git status
+git add -u
+git commit -m "fix: use end date in common criteria detailed report; split filters into separate rows in common criteria report"
+git status
+git status
+git diff
+git push origin 'fix/MGR-617'
+git checkout dev
+git status
+git reset
+clear
+ls
+git status
+git restore 
+git restore apps/admin-management/src/assets/templates/reports/ed_common_criteria_guidelines_report.xlsx
+git restore apps/admin-management/src/assets/templates/reports/ed_common_criteria_report.xlsx
+git checkout dev
+git pull
+clear
+git checkout 'feature/care-coordination-foundation/mgr-576'
+git stash apply
+cd ..
+cd carelink-admin-ui
+yarn dev
+exit
+nest g co ./care-coordination
+git checkout dev
+git stash
+git checkout dev
+git pull
+git stash apply
+clear
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/test
+git pull
+npm run typeorm:migration:create ./apps/admin-management/src/common/migrations/add-logging-type
+npm run start:dev admin-management
+npm run start:dev admin-management
+git stash
+git checkout -b 'feat/cc_event_logs_job'
+git stash apply
+man find
+man find
+nvim
+man find
+man find -exec
+man stat
+nvim file_sizes.txt
+ls
+nvim main.py
+fg
+python3 main2.py
+ls
+cp file_sizes.txt file_sizes.txt.copy
+nvim cmd.sh
+exit
+exit
+тму�у�
+nvim
+awk '{sum += $1} END {print sum / (1024^3) " GB"}' file.txt
+awk '{sum += $1} END {print sum / (1024^4) " GB"}' file.txt
+awk '{sum += $1} END {print sum / (1024*1024*1024) " GB"}' file.txt
+awk '{sum += $1} END {print sum / (1024*1024*1024) " GB"}' file.txt
+find / -xdev -type f -exec stat --format="%s" {} + 2>/dev/null | awk '{sum += $1} END {print sum / (1024*1024*1024) " GB"}'\
+
+find / -x -type f -exec stat --format="%s" {} + 2>/dev/null | awk '{sum += $1} END {print sum / (1024*1024*1024) " GB"}'\
+
+fg
+find / -xdev -type f -exec stat --format="%s" {} + 2>/dev/null | awk '{sum += $1} END {print sum / (1024*1024*1024) " GB"}'\
+
+exit
+man find
+exit
+cd proj/os
+ls
+ls
+nvim cmd.sh
+nvim cmd.sh
+nvim main.py
+source .venv/bin/activate
+python main.py
+python main2.py
+fg
+python main2.py
+fg
+ап
+fg
+python main2.py
+ап
+fg
+python main.py
+ls
+nvim main3.py
+python main3.py
+ап
+fg
+python main4.py
+python main2.py
+fg
+nvim main2.py
+pythoon main2.py
+python main2.py
+fg
+python main2.py
+fg
+python main2.py
+fg
+python main2.py
+fg
+sudo ./cmd.sh
+nvim main2.py
+python main2
+python main2.py
+fg
+python main2.py
+find / -type f -printf "%s\n" 2>/dev/null | sort -n > compare.txt
+ду�
+ls
+nvim compare.txt
+exit
+ls
+clear
+cd
+cd Documents
+ls
+cat p | pbcopy
+exit
+cd proj
+ls
+cd os
+ls
+cd ..
+ls
+mkdir lab1
+cd os
+cp * ../lab1
+ls
+rm *
+mv ../lab1 .
+ls
+ls
+ls lab1
+mv cmd.sh lab1
+ls
+ls lab1
+ls
+rm cmd.sh
+mkdir lab2
+cd lab2
+nvim main.c
+gcc -o prog main.c
+ls
+./prog
+nvim main.c
+gcc -o prog main.c
+./prog
+./prog
+ап
+fg
+gcc -o prog main.c
+fg
+gcc -o prog main.c
+fg
+./prog
+fg
+gcc -o prog main.c
+./prog
+fg
+gcc -o prog main.c
+fg
+gcc -o prog main.c
+./prog
+fg
+exit
+clear
+git checkout dev
+git pull
+git fetch
+git pull
+clear
+npm run start:dev admin-management
+clear
+npm run start:dev admin-management
+clear
+clear
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/update-care-coordination-entities
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/test
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/test
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/test
+npm run start:dev admin-management
+npm run start:dev admin-management
+git stash
+git checkout -b 'fix/MGR-576'
+git stash apply
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/test
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/test
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/test
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/test
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/test
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/update-care-coordination-entities
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/update-care-coordination-entities
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/update-care-coordination-entities
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/update-care-coordination-entities
+npm run start:dev admin-management
+npm run start:dev admin-management
+git checkout dev
+git pull
+clear
+git checkout 'feat/cc_event_logs_job'
+git merge dev
+clear
+nest g co ./care-coordination
+npm run start:dev admin-management
+git stash
+git checkout dev
+git log 
+npm run start:dev admin-management
+git checkout 'feat/cc_event_logs_job'
+npm run start:dev admin-management
+git stash apply
+npm run start:dev admin-management
+npm run typeorm:migration:create ./apps/admin-management/src/common/migrations/insert-cc-settings-menu-function
+sdk list java
+cd Documents
+cat p | pbcopy
+exit
+npm run start:dev admin-management
+git stash
+git checkout dev
+git pull
+git checkout -b 'fix/MGR-576'
+git branch -D 'fix/MGR-576'
+git checkout -b 'fix/MGR-576'
+git pull
+npm run start:dev admin-management
+git stash
+git checkout dev
+git checkout 'fix/MGR-608'
+git checkout -b 'fix/MGR-608'
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/improve-care-coordination-entities
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+ls
+nvim dict_care_coordination_events_202504031408.json
+exit
+brew --prefix postgresql
+cd /usr/local/opt/postgresql@14
+cd /usr/local/opt/postgresql@15
+ls
+cd bin
+ls
+cd ..
+cd lib
+ls
+cd ..
+cd include
+ls
+cd ..
+fzf
+cd
+fzf
+find '*.pid'
+find -f '*.pid'
+find -f file '*.pid'
+man find
+rm /usr/local/var/postgresql@15/postmaster.pid
+brew services restart postgresql@15
+clear
+npm run start:dev admin-management
+git stash apply
+git stash apply
+npm run start:dev admin-management
+git checkout 'feat/cc_standard_text_builder'
+git pull
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/test
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/test
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run start:dev admin-management
+npm run typeorm:migration:generate ./apps/admin-management/src/common/migrations/test
+exit

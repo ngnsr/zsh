@@ -1,0 +1,120 @@
+# Purification
+# by Matthieu Cneude
+# https://github.com/Phantas0s/purification
+
+# Based on:
+
+# Purity
+# by Kevin Lanni
+# https://github.com/therealklanni/purity
+# MIT License
+
+# prompt:
+# %F => color dict
+# %f => reset color
+# %~ => current path
+# %* => time
+# %n => username
+# %m => shortname host
+# %(?..) => prompt conditional - %(condition.true.false)
+
+# TODO: fix this shit: become extremely slow for some reason
+# Display git status
+# TODO to refactor with switch / using someting else than grep
+# Might be faster using ripgrep too
+# git_prompt_status() {
+#   start=$(($(gdate +%s%N)/1000000))
+#
+#   local INDEX STATUS
+#   INDEX=$(command git status --porcelain -b 2>/dev/null)
+#   echo $INDEX
+#
+#   STATUS=$(echo "$INDEX" | awk '
+#     /^\?\? / { untracked=1 }
+#     /^A  / || /^M  / || /^MM / { added=1 }
+#     /^ M / || /^AM / || /^ T / { modified=1 }
+#     /^R  / { renamed=1 }
+#     /^ D / || /^D  / || /^AD / { deleted=1 }
+#     /^UU / { unmerged=1 }
+#     /^## .*ahead/ { ahead=1 }
+#     /^## .*behind/ { behind=1 }
+#     /^## .*diverged/ { diverged=1 }
+#     END {
+#       if (untracked) printf " %s", ENVIRON["ZSH_THEME_GIT_PROMPT_UNTRACKED"]
+#       if (added) printf " %s", ENVIRON["ZSH_THEME_GIT_PROMPT_ADDED"]
+#       if (modified) printf " %s", ENVIRON["ZSH_THEME_GIT_PROMPT_MODIFIED"]
+#       if (renamed) printf " %s", ENVIRON["ZSH_THEME_GIT_PROMPT_RENAMED"]
+#       if (deleted) printf " %s", ENVIRON["ZSH_THEME_GIT_PROMPT_DELETED"]
+#       if (unmerged) printf " %s", ENVIRON["ZSH_THEME_GIT_PROMPT_UNMERGED"]
+#       if (ahead) printf " %s", ENVIRON["ZSH_THEME_GIT_PROMPT_AHEAD"]
+#       if (behind) printf " %s", ENVIRON["ZSH_THEME_GIT_PROMPT_BEHIND"]
+#       if (diverged) printf " %s", ENVIRON["ZSH_THEME_GIT_PROMPT_DIVERGED"]
+#       print ""
+#     }
+#   ')
+#
+#   if [[ -n "$STATUS" ]]; then
+#     echo "[ $STATUS ]"
+#   fi
+#   end=$(($(gdate +%s%N)/1000000))
+#   echo "git prompt status takes" $(echo $end - $start | bc)
+# }
+
+
+# prompt_git_branch() {
+#     start=$(($(gdate +%s%N)/1000000))
+#     autoload -Uz vcs_info 
+#     precmd_vcs_info() { vcs_info }
+#     precmd_functions+=( precmd_vcs_info )
+#     setopt prompt_subst
+#     zstyle ':vcs_info:git:*' formats '%b'
+#     end=$(($(gdate +%s%N)/1000000))
+#     echo "git branch takes" $(echo $end - $start | bc)
+# }
+
+# prompt_git_info() {
+#     start=$(($(gdate +%s%N)/1000000))
+#     [ ! -z "$vcs_info_msg_0_" ] && echo "$ZSH_THEME_GIT_PROMPT_PREFIX%F{white}$vcs_info_msg_0_%f$ZSH_THEME_GIT_PROMPT_SUFFIX"
+#     end=$(($(gdate +%s%N)/1000000))
+#     echo "git info takes" $(echo $end - $start | bc)
+# }
+
+prompt_purity_precmd() {
+    # Pass a line before each prompt
+    print -P ''
+}
+
+prompt_purification_setup() {
+    # Display git branch
+
+    autoload -Uz add-zsh-hook
+    add-zsh-hook precmd prompt_purity_precmd
+
+    # start=$(($(gdate +%s%N)/1000000))
+
+    # ZSH_THEME_GIT_PROMPT_PREFIX=" %F{red}λ%f:"
+    # ZSH_THEME_GIT_PROMPT_DIRTY=""
+    # ZSH_THEME_GIT_PROMPT_CLEAN=""
+    # ZSH_THEME_GIT_PROMPT_ADDED="%F{green}+%f "
+    # ZSH_THEME_GIT_PROMPT_MODIFIED="%F{blue}%f "
+    # ZSH_THEME_GIT_PROMPT_DELETED="%F{red}x%f "
+    # ZSH_THEME_GIT_PROMPT_RENAMED="%F{magenta}➜%f "
+    # ZSH_THEME_GIT_PROMPT_UNMERGED="%F{yellow}═%f "
+    # ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{white}%f "
+    # ZSH_THEME_GIT_PROMPT_STASHED="%B%F{red}%f%b "
+    # ZSH_THEME_GIT_PROMPT_BEHIND="%B%F{red}%f%b "
+    # ZSH_THEME_GIT_PROMPT_AHEAD="%B%F{green}%f%b "
+
+    # prompt_git_branch
+    # RPROMPT='$(prompt_git_info) $(git_prompt_status)'
+    PROMPT=$'%F{white}%~ %B%F{blue}\n>%f%b '
+    # end=$(($(gdate +%s%N)/1000000))
+    #
+    # echo "main info takes" $(echo $end - $start | bc)
+}
+
+
+# start=$(($(gdate +%s%N)/1000000))
+prompt_purification_setup
+# end=$(($(gdate +%s%N)/1000000))
+# echo "all takes" $(echo $end - $start | bc)
