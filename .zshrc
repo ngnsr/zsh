@@ -39,11 +39,7 @@ source $ZDOTDIR/aliases
 source $ZDOTDIR/plugins/bd.zsh
 
 source <(fzf --zsh)
-source "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "/opt/homebrew/opt/zsh-syntax-highlighting"
+source "/opt/homebrew/opt/zsh-autosuggestions"
 
-[ -f "/Users/rr/.ghcup/env" ] && . "/Users/rr/.ghcup/env" # ghcup-env
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
