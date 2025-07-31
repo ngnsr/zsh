@@ -1,5 +1,0 @@
-cd .config
-ls
-cd skhd
-ls
-nvim skhdrc
