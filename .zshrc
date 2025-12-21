@@ -41,4 +41,11 @@ source $ZDOTDIR/plugins/bd.zsh
 source <(fzf --zsh)
 source "/opt/homebrew/opt/zsh-syntax-highlighting"
 source "/opt/homebrew/opt/zsh-autosuggestions"
-export PATH="/opt/homebrew/opt/postgresql@15/bin/:$PATH"
+# Postgres
+# export PATH="/opt/homebrew/opt/postgresql@15/bin/:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+

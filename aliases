@@ -47,7 +47,7 @@ alias grep="grep -i --color=auto"
 # | dust |
 # +------+
 
-alias dust='du -sh -- * .[^.]* | sort -hr'
+alias dust='du -sh -- *(D) | sort -hr'
 
 # +------+
 # | ping |
@@ -170,7 +170,7 @@ alias gobin="$GOPATH/bin/" # golang bin
 # alias ddg="duckduckgo"
 # alias wiki="wikipedia"
 
-alias date='gdate'
+# alias date='gdate'
 alias nr='npm run start:dev admin-management'
 
 # Pomodoro
