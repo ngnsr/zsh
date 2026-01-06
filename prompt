@@ -32,6 +32,7 @@ zstyle ':vcs_info:git:*' formats '%F{red}λ%f %F{white}%b%f'
 # -----------------------------
 prompt_purity_precmd() {
     vcs_info
+    # Visual separator between commands
     print -P ''
 }
 

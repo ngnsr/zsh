@@ -1,12 +1,11 @@
 # History settings in Zsh
-HISTSIZE=10000         # Number of commands to remember
-SAVEHIST=10000         # Number of commands to save
-HISTFILE=~/.zsh_history # The history file location
 setopt append_history  # Append to the history file, not overwrite
 setopt share_history   # Share history across all sessions
 
 # competion
-autoload -U compinit; compinit
+autoload -U compinit
+compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
+
 _comp_options+=(globdots)
 source $ZDOTDIR/completion.zsh
 
@@ -36,14 +35,13 @@ source $ZDOTDIR/bindings.zsh
 source $ZDOTDIR/aliases
 
 # plugins
-source $ZDOTDIR/plugins/bd.zsh
+for file in "$ZDOTDIR/plugins"/*.zsh; do
+  [[ -f "$file" ]] && source "$file"
+done
 
 source <(fzf --zsh)
 source "/opt/homebrew/opt/zsh-syntax-highlighting"
 source "/opt/homebrew/opt/zsh-autosuggestions"
-# Postgres
-# export PATH="/opt/homebrew/opt/postgresql@15/bin/:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

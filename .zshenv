@@ -8,8 +8,6 @@
 export DOTFILES="$HOME/.dotfiles"
 export WORKSPACE="$HOME/workspace"
 
-[ -f "$DOTFILES/install_config" ] && source "$DOTFILES/install_config"
-
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
@@ -27,11 +25,9 @@ export SAVEHIST=10000                   # Maximum events in history file
 
 # other software
 export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
-# export GIMP_VERSION="2.10"
 export SCREENSHOT="$HOME/Documents/images/screenshots"
 
 # Man pages
-# export MANPAGER='nvim +Man!'
 export MANPAGER="vim +MANPAGER -"
 
 # fzf
@@ -74,14 +70,13 @@ export NPM_BIN="$XDG_CONFIG_HOME/node_modules/bin"
 export GIT_REVIEW_BASE=main # See gitconfig
 
 # PATH
-export PATH="$GOBIN:$PATH"                                          # GOBIN
-export PATH="$NPM_BIN:$PATH"                                        # NPM
-
-export PATH="$PATH:$HOME/repos/flutter/bin"
-# Cloud
-# source CLOUD/dotfiles/common/en
+path=(
+  $GOBIN
+  $NPM_BIN
+  $HOME/repos/flutter/bin
+  $ANDROID_HOME/platform-tools
+  $ANDROID_HOME/cmdline-tools/latest/bin
+  $path
+)
 
 export ANDROID_HOME=$HOME/Android
-export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
-
-export GOOGLE_CLOUD_PROJECT="cli1-466119"

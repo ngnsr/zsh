@@ -174,16 +174,6 @@ typeset -gA keys=(
     Ctrl+Alt+Shift+Backspace '^?'
   )
 
-# Widget to open projects with fzf silently
-function open-projects {
-    elements="/Users/rr/.config/zsh/\n/Users/rr/.config/nvim/\n"
-    elements+=$(ls -1 ~/proj/ | sed 's|^|/Users/rr/proj/|')
-    cd ~ && cd $(echo "$elements" | fzf)
-    #TODO: reload PS1
-    zle redisplay
-}
-zle -N open-projects
-
 bindkey -- "${keys[Home]}"            .beginning-of-line
 bindkey -- "${keys[End]}"             .end-of-line
 bindkey -- "${keys[Insert]}"          .overwrite-mode
@@ -211,8 +201,14 @@ bindkey '^T' fzf-file-widget
 zle -N fzf-cd-widget
 bindkey '^F' fzf-cd-widget
 
-# Bind Ctrl+P to open projects
-bindkey '^P' open-projects
+# Bind Ctrl+P to (plugins/g.zsh) to list projects folders
+g_widget() {
+  local dirs=("$HOME/proj"/*(/) "$XDG_CONFIG_HOME"/{zsh,nvim})
+  cd "$(printf '%s\n' "${dirs[@]}" | fzf --preview 'ls -la {}')" || return
+  zle reset-prompt   # refresh prompt
+}
+zle -N g_widget
+bindkey '^P' g_widget
 
 # zsh auosuggestion
 bindkey '^G' autosuggest-accept

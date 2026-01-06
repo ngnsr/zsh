@@ -1,14 +1,10 @@
-#!/usr/bin/env bash
-
 # +--------+
 # | System |
 # +--------+
 
 alias shutdown='sudo shutdown now'
 alias restart='sudo reboot'
-alias suspend='sudo pm-suspend'
-
-alias bigf= 'find / -xdev -type f -size +500M'  # display "big" files > 500M
+alias bigf='find / -xdev -type f -size +500M'  # display "big" files > 500M
 
 # +-----+
 # | Zsh |
@@ -25,7 +21,7 @@ alias ls='ls --color=auto'
 alias l='ls -l'
 alias ll='ls -lahF'
 alias lls='ls -lahFtr'
-alias la='ls -A'
+alias la='ls -alh'
 alias lc='ls -CF'
 
 # +----+
@@ -35,7 +31,6 @@ alias lc='ls -CF'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
-alias la='ls -alh'
 
 # +------+
 # | grep |
@@ -107,7 +102,6 @@ alias gl='git log --oneline'
 alias gr='git remote'
 alias grs='git remote show'
 alias glol='git log --graph --abbrev-commit --oneline --decorate'
-alias gclean="git branch --merged | grep  -v '\\*\\|master\\|develop\\|main\\|dev' | xargs -n 1 git branch -d" # Delete local branch merged with master
 alias gblog="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:red)%(refname:short)%(color:reset) - %(color:yellow)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:blue)%(committerdate:relative)%(color:reset))'"                                                             # git log for each branches
 alias gsub="git submodule update --remote"                                                        # pull submodules
 alias gj="git-jump"                                                                               # Open in vim quickfix list files of interest (git diff, merged...)
@@ -126,8 +120,8 @@ alias tmuxl='tmux list-sessions'
 # | docker |
 # +--------+
 alias dockls="docker container ls | awk 'NR > 1 {print \$NF}'"                  # display names of running containers
-alias dockRr='docker rm $(docker ps -a -q)'                                     # delete every containers / images
-alias dockRr='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'   # delete every containers / images
+alias dockrm='docker rm $(docker ps -a -q)'                                     # delete every containers / images
+alias dockrmall='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'   # delete every containers / images
 alias dockstats='docker stats $(docker ps -q)'                                  # stats on images
 alias dockimg='docker images'                                                   # list images installed
 alias dockprune='docker system prune -a'                                        # prune everything
@@ -135,53 +129,24 @@ alias dockprune='docker system prune -a'                                        
 # +----------------+
 # | docker-compose |
 # +----------------+
+alias docker-compose-dev='docker compose -f docker-compose-dev.yml' # run a different config file than the default one
 
-# alias docker-compose-dev='docker compose -f docker-compose-dev.yml' # run a different config file than the default one
-#
 # Folders
-alias work="$HOME/workspace"
 alias doc="$HOME/Documents"
 alias dow="$HOME/Downloads"
-alias dot="$HOME/.dotfiles"
 
 # Golang
 alias gosrc="$GOPATH/src/" # golang src
 alias gobin="$GOPATH/bin/" # golang bin
 
-# Clojure
-# alias cljrepl='clojure -Sdeps "{:deps {com.bhauman/rebel-readline {:mvn/version \"0.1.4\"}}}" -m rebel-readline.main'
-
-# AWS
-# alias awsa='aws --profile amboss-profile'
-
-# OBS
-
-# alias obsn='prime-run obs&'
-
-# +--------+
-# | Custom |
-# +--------+
-
-
-# +---------+
-# | scripts |
-# +---------+
-
-# alias ddg="duckduckgo"
-# alias wiki="wikipedia"
-
-# alias date='gdate'
-alias nr='npm run start:dev admin-management'
+# Node
+alias nr='npm run start:dev'
 
 # Pomodoro
 alias work="(sleep 3600 && terminal-notifier -message 'Pomodoro'\
         -title 'Work Timer is up! Take a Break 😊'\
         -sound Crystal) &"
-#         
+
 alias rest="(sleep 600 && terminal-notifier -message 'Pomodoro'\
         -title 'Break is over! Get back to work 😬'\
         -sound Crystal) &"
-
-elements=$(ls -1 ~/proj/ | sed 's|^|/Users/rr/proj/|')
-elements+="\n/Users/rr/.config/zsh/\n/Users/rr/.config/nvim/"
-alias g='cd ~ && cd $(echo "$elements" | fzf)'
