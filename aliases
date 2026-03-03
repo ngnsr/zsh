@@ -42,7 +42,7 @@ alias grep="grep -i --color=auto"
 # | dust |
 # +------+
 
-alias dust='du -sh -- *(D) | sort -hr'
+alias dust='du -sh -- *(D) 2>/dev/null | sort -hr 2>/dev/null'
 
 # +------+
 # | ping |
