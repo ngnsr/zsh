@@ -189,18 +189,6 @@ bindkey -- "${keys[Shift+Tab]}"       .reverse-menu-complete
 bindkey -- "${keys[Ctrl+Left]}"       .backward-word
 bindkey -- "${keys[Ctrl+Right]}"      .forward-word
 
-# Bind Ctrl+R to search history
-zle -N fzf-history-widget
-bindkey '^R' fzf-history-widget
-
-# Bind Ctrl+T to fuzzy-find files
-zle -N fzf-file-widget
-bindkey '^T' fzf-file-widget
-
-# Bind Ctrl+F to fuzzy directory search
-zle -N fzf-cd-widget
-bindkey '^F' fzf-cd-widget
-
 # Bind Ctrl+P to (plugins/g.zsh) to list projects folders
 g_widget() {
   local dirs=("$HOME/proj"/*(/) "$XDG_CONFIG_HOME"/{zsh,nvim})
