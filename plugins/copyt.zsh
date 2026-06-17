@@ -1,11 +1,15 @@
 copyt () {
     local root="${1:-.}"
     local exclude_files=("package-lock.json" "yarn.lock" "pnpm-lock.yaml" "bun.lockb")
+    local exclude_dirs=(".git" "node_modules" "dist" "build" "target" ".next" ".cache" "out")
 
-    # Join exclude files into --glob parameters for rg
+    # Join exclude files and dirs into --glob parameters for rg
     local rg_excludes=()
     for f in "${exclude_files[@]}"; do
         rg_excludes+=(--glob "!$f")
+    done
+    for d in "${exclude_dirs[@]}"; do
+        rg_excludes+=(--glob "!$d/*")
     done
 
     # Function to check if a file should be excluded
