@@ -11,8 +11,6 @@ alias bigf='find / -xdev -type f -size +500M'  # display "big" files > 500M
 # +-----+
 
 alias d='dirs -v'
-for index ({1..9}) alias "$index"="cd +${index} > /dev/null"; unset index # directory stack
-alias cdf='cd $(fd . -t d | fzf)'
 alias vf='nvim $(fzf)'
 
 # +----+
