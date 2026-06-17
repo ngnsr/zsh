@@ -55,6 +55,7 @@ for file in "$ZDOTDIR/plugins"/*.zsh; do
 done
 
 source <(fzf --zsh)
+eval "$(zoxide init zsh)"
 source "/opt/homebrew/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "/opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 

@@ -19,12 +19,12 @@ alias vf='nvim $(fzf)'
 # | ls |
 # +----+
 
-alias ls='ls --color=auto'
-alias l='ls -l'
-alias ll='ls -lahF'
-alias lls='ls -lahFtr'
-alias la='ls -alh'
-alias lc='ls -CF'
+alias ls='eza --icons'
+alias l='eza -l --icons'
+alias ll='eza -lah --git --icons'
+alias lls='eza -lahtr --git --icons'
+alias la='eza -lah --icons'
+alias lc='eza -F --icons'
 
 # +----+
 # | cp |
@@ -55,7 +55,18 @@ alias pp='jq .'
 # | dust |
 # +------+
 
-alias dust='du -sh -- *(D) 2>/dev/null | sort -hr 2>/dev/null'
+alias dust-fallback='du -sh -- *(D) 2>/dev/null | sort -hr 2>/dev/null'
+alias dux='dust'
+
+# +-----+
+# | duf |
+# +-----+
+alias df='duf'
+
+# +-------+
+# | procs |
+# +-------+
+alias ps='procs'
 
 # +------+
 # | ping |
@@ -129,6 +140,7 @@ alias gsub="git submodule update --remote"                                      
 alias gj="git-jump"                                                                               # Open in vim quickfix list files of interest (git diff, merged...)
 alias gst='git stash'
 alias gstp='git stash pop'
+alias lg='lazygit'
 
 alias dif="git diff --no-index"                                                                   # Diff two files even if not in git repo! Can add -w (don't diff whitespaces)
 
@@ -151,6 +163,7 @@ alias dc='docker compose'
 alias dcu='docker compose up'
 alias dcud='docker compose up -d'
 alias dcd='docker compose down'
+alias ld='lazydocker'
 alias dockls="docker container ls | awk 'NR > 1 {print \$NF}'"                  # display names of running containers
 alias dockrm='docker rm $(docker ps -a -q)'                                     # delete every containers / images
 alias dockrmall='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'   # delete every containers / images
