@@ -4,7 +4,7 @@
 
 alias shutdown='sudo shutdown now'
 alias restart='sudo reboot'
-alias bigf='find / -xdev -type f -size +500M'  # display "big" files > 500M
+alias bigf='find / -xdev -type f -size +500M 2>/dev/null'  # display "big" files > 500M
 
 # +-----+
 # | Zsh |
