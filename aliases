@@ -12,6 +12,8 @@ alias bigf='find / -xdev -type f -size +500M'  # display "big" files > 500M
 
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index} > /dev/null"; unset index # directory stack
+alias cdf='cd $(fd . -t d | fzf)'
+alias vf='nvim $(fzf)'
 
 # +----+
 # | ls |
@@ -37,6 +39,17 @@ alias rm='rm -iv'
 # +------+
 
 alias grep="grep -i --color=auto"
+
+# +-----+
+# | bat |
+# +-----+
+alias cat='bat'
+alias catp='bat --plain'
+
+# +----+
+# | jq |
+# +----+
+alias pp='jq .'
 
 # +------+
 # | dust |
@@ -84,6 +97,7 @@ alias lvim='\vim -c "set nowrap|syntax off"'        # fast vim for big files / b
 alias gs='git status'
 alias gss='git status -s'
 alias ga='git add'
+alias gaa='git add .'
 alias gp='git push'
 alias gpraise='git blame'
 alias gpo='git push origin'
@@ -96,15 +110,25 @@ alias grb='git branch -r'                                                       
 alias gplo='git pull origin'
 alias gb='git branch '
 alias gc='git commit'
+alias gcm='git commit -m'
+alias gca='git commit --amend'
+alias gcan='git commit --amend --no-edit'
 alias gd='git diff'
 alias gco='git checkout '
+alias gsw='git switch'
+alias gswc='git switch -c'
+alias gf='git fetch'
+alias gfa='git fetch --all --prune'
 alias gl='git log --oneline'
+alias glg='git log --graph --decorate --all'
 alias gr='git remote'
 alias grs='git remote show'
 alias glol='git log --graph --abbrev-commit --oneline --decorate'
 alias gblog="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:red)%(refname:short)%(color:reset) - %(color:yellow)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:blue)%(committerdate:relative)%(color:reset))'"                                                             # git log for each branches
 alias gsub="git submodule update --remote"                                                        # pull submodules
 alias gj="git-jump"                                                                               # Open in vim quickfix list files of interest (git diff, merged...)
+alias gst='git stash'
+alias gstp='git stash pop'
 
 alias dif="git diff --no-index"                                                                   # Diff two files even if not in git repo! Can add -w (don't diff whitespaces)
 
@@ -119,6 +143,14 @@ alias tmuxl='tmux list-sessions'
 # +--------+
 # | docker |
 # +--------+
+alias dps='docker ps'
+alias di='docker images'
+alias dex='docker exec -it'
+alias dlog='docker logs -f'
+alias dc='docker compose'
+alias dcu='docker compose up'
+alias dcud='docker compose up -d'
+alias dcd='docker compose down'
 alias dockls="docker container ls | awk 'NR > 1 {print \$NF}'"                  # display names of running containers
 alias dockrm='docker rm $(docker ps -a -q)'                                     # delete every containers / images
 alias dockrmall='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'   # delete every containers / images
@@ -147,26 +179,65 @@ alias work="(sleep 3600 && terminal-notifier -message 'Pomodoro'\
         -title 'Work Timer is up! Take a Break 😊'\
         -sound Crystal) &"
 
-alias rest="(sleep 600 && terminal-notifier -message 'Pomodoro'\
-        -title 'Break is over! Get back to work 😬'\
+alias rest="(sleep 600 && terminal-notifier -message 'Pomodoro'\\
+        -title 'Break is over! Get back to work 😬'\\
         -sound Crystal) &"
+
+# +-----------------+
+# | Process helpers |
+# +-----------------+
+alias psg='ps aux | grep'
+alias ports='lsof -i -P -n'
+alias p8080='lsof -i :8080'
+alias kill8080='lsof -ti:8080 | xargs kill -9'
+
+# +------------+
+# | Networking |
+# +------------+
+alias myip='curl ifconfig.me'
+localip() {
+  ipconfig getifaddr $(route get default | awk '/interface:/ {print $2}')
+}
+
+# +-----------+
+# | Functions |
+# +-----------+
+mkcd() {
+  mkdir -p "$1" && cd "$1"
+}
+
+extract() {
+  case "$1" in
+    *.tar.bz2) tar xjf "$1" ;;
+    *.tar.gz) tar xzf "$1" ;;
+    *.bz2) bunzip2 "$1" ;;
+    *.rar) unrar x "$1" ;;
+    *.gz) gunzip "$1" ;;
+    *.tar) tar xf "$1" ;;
+    *.tbz2) tar xjf "$1" ;;
+    *.tgz) tar xzf "$1" ;;
+    *.zip) unzip "$1" ;;
+    *.7z) 7z x "$1" ;;
+    *) echo "unknown archive" ;;
+  esac
+}
 
 # fastfetch
 alias ff=fastfetch
 
 # Feed Vault
-alias fv="node /Users/rr/proj/feed-vault/index.js"
-alias fvt="node /Users/rr/proj/feed-vault/src/tui.js"
+alias fv="node $HOME/proj/feed-vault/index.js"
+alias fvt="node $HOME/proj/feed-vault/src/tui.js"
 
 # Playwright Session Manager
-alias psm="node /Users/rr/proj/playwright-session-manager/playwright-session-manager.js"
+alias psm="node $HOME/proj/playwright-session-manager/playwright-session-manager.js"
 
 function psm-headers() {
-  node /Users/rr/proj/playwright-session-manager/playwright-session-manager.js headers "$1"
+  node $HOME/proj/playwright-session-manager/playwright-session-manager.js headers "$1"
 }
 
 function psm-token() {
-  node /Users/rr/proj/playwright-session-manager/playwright-session-manager.js token "$1"
+  node $HOME/proj/playwright-session-manager/playwright-session-manager.js token "$1"
 }
 
 alias acurl='curl $(psm-headers admin)'

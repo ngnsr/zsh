@@ -2,10 +2,13 @@
 setopt extended_glob      # Enable extended globbing (required for compinit speedup)
 
 # History settings in Zsh
-setopt append_history     # Append to the history file, not overwrite
-setopt share_history      # Share history across all sessions
-setopt hist_ignore_space  # Ignore commands starting with a space
+setopt append_history       # Append to the history file, not overwrite
+setopt share_history        # Share history across all sessions
+setopt hist_ignore_space    # Ignore commands starting with a space
 setopt hist_ignore_all_dups # Remove older duplicate entries in history
+setopt hist_find_no_dups    # Do not display a line previously found
+setopt hist_save_no_dups    # Do not write duplicate entries to the history file
+setopt extended_history     # Write the history file in the ":1078453472:0;cmd" format
 
 # completion
 # Ensure target cache directory exists
@@ -25,6 +28,7 @@ fpath=($ZDOTDIR $fpath)
 autoload -Uz prompt; prompt
 
 # cd
+setopt AUTO_CD              # If a command is a directory, cd into it
 setopt AUTO_PUSHD           # Push the current directory visited on the stack.
 setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
 setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
