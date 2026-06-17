@@ -2,25 +2,20 @@ cursor_mode() {
     # Guard: Do not run cursor escapes on dumb terminals
     [[ "$TERM" == "dumb" ]] && return
 
-    # Default escape sequences for cursor shapes:
-    #   \e[1 q : blinking block      \e[2 q : steady block
-    #   \e[3 q : blinking underline  \e[4 q : steady underline
-    #   \e[5 q : blinking beam       \e[6 q : steady beam
-    local cursor_block='\e[2 q'
-    local cursor_beam='\e[6 q'
-
-    # Wrap for Tmux if inside a session
-    if [[ -n "$TMUX" ]]; then
-        cursor_block="\ePtmux;\e${cursor_block}\e\\"
-        cursor_beam="\ePtmux;\e${cursor_beam}\e\\"
-    fi
-
     cursor_set_beam() {
-        echo -ne "$cursor_beam"
+        if [[ -n "$TMUX" ]]; then
+            echo -ne "\ePtmux;\e\e[6 q\e\\"
+        else
+            echo -ne "\e[6 q"
+        fi
     }
 
     cursor_set_block() {
-        echo -ne "$cursor_block"
+        if [[ -n "$TMUX" ]]; then
+            echo -ne "\ePtmux;\e\e[2 q\e\\"
+        else
+            echo -ne "\e[2 q"
+        fi
     }
 
     cursor_keymap_select() {
