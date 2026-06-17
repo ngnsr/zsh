@@ -204,7 +204,11 @@ bindkey '^F' fzf-cd-widget
 # Bind Ctrl+P to (plugins/g.zsh) to list projects folders
 g_widget() {
   local dirs=("$HOME/proj"/*(/) "$XDG_CONFIG_HOME"/{zsh,nvim})
-  cd "$(printf '%s\n' "${dirs[@]}" | fzf --preview 'ls -la {}')" || return
+  local selected
+  selected=$(printf '%s\n' "${dirs[@]}" | fzf --preview 'ls -la {}')
+  if [[ -n "$selected" ]]; then
+    cd "$selected"
+  fi
   zle reset-prompt   # refresh prompt
 }
 zle -N g_widget

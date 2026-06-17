@@ -1,10 +1,21 @@
-# History settings in Zsh
-setopt append_history  # Append to the history file, not overwrite
-setopt share_history   # Share history across all sessions
+# General options
+setopt extended_glob      # Enable extended globbing (required for compinit speedup)
 
-# competion
-autoload -U compinit
-compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
+# History settings in Zsh
+setopt append_history     # Append to the history file, not overwrite
+setopt share_history      # Share history across all sessions
+setopt hist_ignore_space  # Ignore commands starting with a space
+setopt hist_ignore_all_dups # Remove older duplicate entries in history
+
+# completion
+# Ensure target cache directory exists
+mkdir -p "$XDG_CACHE_HOME/zsh"
+autoload -Uz compinit
+if [[ -n "$XDG_CACHE_HOME/zsh/zcompdump"(#qN.m+1) ]]; then
+  compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
+else
+  compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
+fi
 
 _comp_options+=(globdots)
 source $ZDOTDIR/completion.zsh
@@ -40,8 +51,13 @@ for file in "$ZDOTDIR/plugins"/*.zsh; do
 done
 
 source <(fzf --zsh)
-source "/opt/homebrew/opt/zsh-syntax-highlighting"
-source "/opt/homebrew/opt/zsh-autosuggestions"
+source "/opt/homebrew/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "/opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

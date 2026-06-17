@@ -150,3 +150,24 @@ alias work="(sleep 3600 && terminal-notifier -message 'Pomodoro'\
 alias rest="(sleep 600 && terminal-notifier -message 'Pomodoro'\
         -title 'Break is over! Get back to work 😬'\
         -sound Crystal) &"
+
+# fastfetch
+alias ff=fastfetch
+
+# Feed Vault
+alias fv="node /Users/rr/proj/feed-vault/index.js"
+alias fvt="node /Users/rr/proj/feed-vault/src/tui.js"
+
+# Playwright Session Manager
+alias psm="node /Users/rr/proj/playwright-session-manager/playwright-session-manager.js"
+
+function psm-headers() {
+  node /Users/rr/proj/playwright-session-manager/playwright-session-manager.js headers "$1"
+}
+
+function psm-token() {
+  node /Users/rr/proj/playwright-session-manager/playwright-session-manager.js token "$1"
+}
+
+alias acurl='curl $(psm-headers admin)'
+
