@@ -3,35 +3,120 @@
 # https://github.com/Phantas0s/purification
 #
 # Simplified + fast Git-enabled version
-# 2-line prompt, branch only (via vcs_info)
+# 2-line prompt with git stats (colors only, no labels)
+#
+# Format: λ branch <modified> <new> <deleted> +<insertions> -<deletions>
+# - Only non-zero categories are shown
+# - Colors: yellow=modified, green=new, red=deleted
+# - Clean state: just "λ branch"
 
-# -----------------------------
-# Prompt symbols reference
-# -----------------------------
-# %F => color dict
-# %f => reset color
-# %~ => current path
-# %n => username
-# %m => short hostname
-# %(?..) => conditional
-
-# -----------------------------
-# Git (vcs_info) setup
-# -----------------------------
-autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
 
-# Enable git only
-zstyle ':vcs_info:*' enable git
+# -----------------------------
+# Git stats functions
+# -----------------------------
 
-# Git format: λ branch
-zstyle ':vcs_info:git:*' formats '%F{red}λ%f %F{white}%b%f'
+# Global state for git stats (underscore-prefixed for file scope)
+typeset -gi _git_modified _git_new _git_deleted _git_insertions _git_deletions
+
+# Parse git status --porcelain=v1 for file counts
+# Uses full XY status matrix for accurate classification
+_git_parse_status() {
+    _git_modified=0
+    _git_new=0
+    _git_deleted=0
+
+    # Stream directly to avoid buffering
+    while IFS= read -r line; do
+        [[ -z "$line" ]] && continue
+
+        local x="${line[1]}"
+        local y="${line[2]}"
+
+        # Classify by presence of flags (handles all XY combinations)
+        # Order matters: check ?, then D, then A, then R
+        if [[ "$x$y" == "??" ]]; then
+            ((_git_new++))
+        elif [[ "$x" == "D" || "$y" == "D" ]]; then
+            ((_git_deleted++))
+        elif [[ "$x" == "A" || "$y" == "A" ]]; then
+            ((_git_new++))
+        elif [[ "$x" == "R" || "$y" == "R" ]]; then
+            :  # renamed: intentionally omitted to reduce prompt noise
+        else
+            ((_git_modified++))
+        fi
+    done < <(git status --porcelain=v1 2>/dev/null)
+}
+
+# Sum insertions/deletions from numstat
+# Handles binary files (reported as "-")
+_git_sum_numstat() {
+    _git_insertions=0
+    _git_deletions=0
+
+    # Stream unstaged changes directly
+    while IFS=$'\t' read -r added removed _; do
+        [[ "$added" == "-" ]] && added=0
+        [[ "$removed" == "-" ]] && removed=0
+        [[ -n "$added" ]] && ((_git_insertions += added))
+        [[ -n "$removed" ]] && ((_git_deletions += removed))
+    done < <(git diff --numstat 2>/dev/null)
+
+    # Stream staged changes directly
+    while IFS=$'\t' read -r added removed _; do
+        [[ "$added" == "-" ]] && added=0
+        [[ "$removed" == "-" ]] && removed=0
+        [[ -n "$added" ]] && ((_git_insertions += added))
+        [[ -n "$removed" ]] && ((_git_deletions += removed))
+    done < <(git diff --cached --numstat 2>/dev/null)
+}
+
+# Main git prompt function
+_git_prompt_info() {
+    # Get branch (2 git calls: symbolic-ref or rev-parse fallback)
+    local branch
+    branch=$(git symbolic-ref --quiet --short HEAD 2>/dev/null) ||
+        branch=$(git rev-parse --short HEAD 2>/dev/null) || return
+
+    # Parse file status
+    _git_parse_status
+
+    # Parse line stats
+    _git_sum_numstat
+
+    # Build output: start with branch (cyan)
+    local output="%F{red}λ%f %F{cyan}${branch}%f"
+
+    # Add file counts (only non-zero)
+    if (( _git_modified > 0 )); then
+        output+=" %F{yellow}${_git_modified}%f"
+    fi
+
+    if (( _git_new > 0 )); then
+        output+=" %F{green}${_git_new}%f"
+    fi
+
+    if (( _git_deleted > 0 )); then
+        output+=" %F{red}${_git_deleted}%f"
+    fi
+
+    # Add line stats (only non-zero)
+    if (( _git_insertions > 0 )); then
+        output+=" %F{green}+${_git_insertions}%f"
+    fi
+
+    if (( _git_deletions > 0 )); then
+        output+=" %F{red}-${_git_deletions}%f"
+    fi
+
+    echo "$output"
+}
 
 # -----------------------------
 # precmd hook
 # -----------------------------
 prompt_purity_precmd() {
-    vcs_info
     # Visual separator between commands
     print -P ''
 }
@@ -44,7 +129,7 @@ prompt_purification_setup() {
 
     setopt prompt_subst
 
-    PROMPT=$'%F{white}%~ ${vcs_info_msg_0_}%B%F{blue}\n>%f%b '
+    PROMPT=$'%F{white}%~ $(_git_prompt_info)%B%F{blue}\n>%f%b '
 }
 
 # -----------------------------
