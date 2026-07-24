@@ -53,16 +53,26 @@ Modular and clean — ideal for syncing or managing across systems.
 - Smart tab completion with color support
 - Modular function loading
 - Clean separation of concerns
-- `bd` function for fast parent directory navigation
+- Git prompt showing live file and line-change stats
+- Modular alias and function loading
 
-### `bd` – Smart directory traversal
+### Git prompt — compact live stats
 
-The `bd` function lets you `cd` into a named parent folder or move up multiple directory levels easily.
+The prompt shows a clean, color-coded summary of your Git working tree:
 
-Examples:
-```bash
-bd src         # jumps to the nearest parent folder named "src"
-bd 3           # goes up 3 directories
+```
+~/repo λ main 3 2 1 +84 -17
+>
 ```
 
-Supports tab completion for parent directories.
+| Token | Color | Meaning |
+|-------|-------|---------|
+| `λ` | red | Git indicator |
+| `main` | cyan | Current branch (or commit hash if detached) |
+| `3` | yellow | Modified files |
+| `2` | green | New files (tracked + untracked) |
+| `1` | red | Deleted files |
+| `+84` | green | Lines added (staged + unstaged) |
+| `-17` | red | Lines removed |
+
+When the working tree is clean, only `λ main` is shown — no noise.
