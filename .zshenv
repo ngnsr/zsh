@@ -87,7 +87,7 @@ export ANDROID_AVD_HOME=$HOME/.config/.android/avd
 path=(
   $GOBIN
   $NPM_BIN
-  /opt/homebrew/opt/postgresql@16/bin
+  /opt/homebrew/opt/postgresql@18/bin
   $HOME/repos/flutter/bin
   $ANDROID_HOME/emulator
   $ANDROID_HOME/platform-tools
